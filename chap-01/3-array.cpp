@@ -2,11 +2,11 @@
 
 int main()
 {
-    int array[] = { 0, 1, 2, 3 };
+    int array[50] = {};
 
-    for (int i = 0; i < 4; ++i)
+    for (int i; i < 50; i++)
     {
-        std::cout << array[i] << std::endl;
+        array[i] = i + 1;
     }
 
     return 0;
