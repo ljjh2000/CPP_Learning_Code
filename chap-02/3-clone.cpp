@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 class Person
 {
@@ -25,6 +26,14 @@ private:
     unsigned int _age = 0u;
 };
 
+const std::vector<int> init()
+{
+    std::vector<int> tmp;
+    tmp.emplace_back(1);
+    tmp.emplace_back(2);
+    return tmp;
+}
+
 std::ostream& operator<<(std::ostream& stream, const Person& person)
 {
     return stream << "Person named '" << person.get_full_name() << "' is " << person.get_age()
@@ -43,5 +52,10 @@ int main()
     std::cout << "Person named '" << copy.get_full_name() << "' is " << copy.get_age() << " years old."
               << std::endl;
 
+    auto        a   = init();
+    std::string str = "abc";
+    auto        pos = str.find("abc");
+
+    std::cout << pos << std::endl;
     return 0;
 }
